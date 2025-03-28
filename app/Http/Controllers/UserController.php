@@ -101,7 +101,6 @@ class UserController extends Controller
             $params[] = "%{$username}%";
         }
 
-        $query .= " LIMIT 5";
         $allusers = DB::select($query, $params);
 
         $users = DB::select("SELECT * FROM users WHERE id = ?", [$user_id]);
